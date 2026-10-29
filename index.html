@@ -94,6 +94,32 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #79
 @media(max-width:579px){.reference-section h3{font-size:.88rem}.reference-table{min-width:590px}.reference-table th,.reference-table td{padding:11px 12px}.reference-section .reference-note{font-size:.74rem;padding:12px}.reference-article{padding:12px}.reference-articles{gap:9px}}
 @media print{.reference-table-wrap{overflow:visible;border:1px solid #ccc}.reference-table{min-width:0;font-size:9pt}.reference-table thead th{color:#000;background:#eee}.reference-table th,.reference-table td{padding:6px}.table-scroll-hint{display:none}.reference-section{break-inside:auto}.reference-table tr{break-inside:avoid}}
 
+
+/* Apenas formulário e CTA do teste gratuito, conforme versão ECA. */
+.trial-pill{display:inline-flex;align-items:center;gap:9px;color:#b5f1cd;font-size:.75rem;font-weight:800}
+#trialScreen{display:none}
+body.trial-mode{padding:0!important;min-height:100vh;background:radial-gradient(circle at 80% 10%,#1a453c,#080f18 60%);color:#eef5fa}
+body.trial-mode > .app-rail,body.trial-mode > .site-top,body.trial-mode > #mainContent,body.trial-mode > .page-foot,body.trial-mode > .mobile-nav,body.trial-mode > #resetDialog,body.trial-mode > .toast,body.trial-mode > .skip{display:none!important}
+body.trial-mode #trialScreen{display:flex;min-height:100vh;padding:28px 18px 48px;align-items:center;justify-content:center}
+.trial-layout{width:min(100%,540px);margin:auto}
+.trial-topline{display:flex;align-items:center;gap:12px;color:#d8ece4;font-size:.8rem;font-weight:750;letter-spacing:.05em;margin-bottom:22px}
+.trial-crest{display:grid;place-items:center;width:43px;height:47px;border-radius:10px;background:#fff;padding:6px;flex-shrink:0}
+.trial-crest img{width:100%;height:100%;object-fit:contain}
+.trial-card{padding:clamp(24px,5vw,42px);border:1px solid #7ac9af77;border-radius:22px;background:linear-gradient(150deg,#162f35,#112132 70%);box-shadow:0 23px 80px #0006}
+.trial-kicker{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#a6e8c8}
+.trial-card h1{font-size:clamp(1.8rem,6vw,2.4rem);letter-spacing:-.035em;line-height:1.22;margin:12px 0 13px;color:#fff}
+.trial-card p{font-size:.9rem;line-height:1.75;color:#b4c9d4;margin:0 0 23px}
+.trial-form{display:grid;gap:18px}
+.trial-form label{display:grid;gap:8px;font-size:.85rem;font-weight:730;color:#e9f4ee}
+.trial-form input{width:100%;min-height:57px;border:1px solid #647e82;border-radius:10px;background:#0b1b27;color:white;font-size:1rem;padding:14px 16px;outline:none}
+.trial-form input::placeholder{color:#77929e}
+.trial-form input:focus{border-color:#c6ebd4;box-shadow:0 0 0 3px #7ac9af22}
+.trial-send{width:100%;min-height:69px;margin-top:7px;border:1px solid #b5e9c8;border-radius:11px;background:#9eddb9;color:#112d23;font-size:1rem;font-weight:850;letter-spacing:.005em;padding:16px;box-shadow:0 9px 24px #58ad832d}
+.trial-send:hover{background:#b9f1d1}
+.trial-privacy{color:#9cb3c1!important;font-size:.7rem!important;line-height:1.7!important;margin:17px 0 0!important}
+.trial-foot{margin-top:24px;text-align:center;color:#94abb8;font-size:.73rem;line-height:1.65}
+@media(max-width:579px){.app-offer .purchase-button{font-size:.9rem;min-height:63px}.trial-card{border-radius:16px}}
+
 </style>
 </head>
 <body>
@@ -121,7 +147,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #79
     <button id="navTrain" type="button" aria-current="false" aria-label="Treino de questões" title="Treino de questões"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg><span class="menu-label">Treino de questões</span><span id="railCount" class="rail-counter">0/5</span></button>
     <button id="navReview" type="button" aria-current="false" aria-label="Minhas marcações" title="Minhas marcações"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><span class="menu-label">Minhas marcações</span></button>
     <a id="navLessonLink" href="https://youtu.be/4iorDnBdQd8" target="_blank" rel="noopener noreferrer" aria-label="Assistir ao aulão no YouTube" title="Assistir ao aulão"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg><span class="menu-label">Assistir ao aulão</span></a>
-    <a id="navPurchaseLink" class="purchase-menu" href="https://thiagoceoliveira-collab.github.io/APLICATIVOPMPE/" target="_blank" rel="noopener noreferrer" aria-label="Adquirir aplicativo de questões PMPE" title="Adquirir aplicativo de questões PMPE"><svg class="icon" aria-hidden="true"><use href="#i-app"/></svg><span class="menu-label">Adquirir aplicativo</span></a>
+    <a id="navPurchaseLink" class="purchase-menu" href="?teste-gratis=1" target="_blank" rel="noopener noreferrer" aria-label="Testar aplicativo de questões PMPE gratuitamente" title="Testar aplicativo gratuitamente"><svg class="icon" aria-hidden="true"><use href="#i-app"/></svg><span class="menu-label">Testar app grátis</span></a>
   </nav>
   <div class="rail-divider"></div>
   <div class="rail-label">Sua preparação</div>
@@ -139,7 +165,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #79
       <div class="teacher-signature"><span>PREPARE-SE COM O PROFESSOR</span><strong>Thiago Oliveira</strong><small>Direitos Humanos · Questões da aula</small></div>
       <div class="hero-copy"><span class="lesson-eyebrow"><span aria-hidden="true"></span>AULÃO PMPE · DIREITOS HUMANOS</span><h1 id="introTitle">Direitos Humanos.<br><em>Missão: compreender.</em></h1><p class="hero-description"><span class="support-label">MATERIAL DE ACOMPANHAMENTO</span>Acompanhe o aulão. Resolva as questões junto com o <strong>Prof. Thiago Oliveira</strong>, marque suas alternativas e consulte os quadros de apoio durante a explicação.</p><div class="lecture-actions"><button id="startBtn" class="primary" type="button">Começar o treino <span aria-hidden="true">→</span></button><a id="introYoutubeLink" class="secondary" href="https://youtu.be/4iorDnBdQd8" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>Assistir ao aulão<span aria-hidden="true">↗</span></a></div><p id="resumeNote" class="resume" hidden></p><div class="hero-caption"><svg class="icon" aria-hidden="true"><use href="#i-save"/></svg>Uma alternativa por questão · quadros de apoio · correção na aula</div></div>
     </div>
-    <aside class="app-offer" aria-labelledby="purchaseTitle"><div class="app-offer-content"><span class="offer-icon"><svg class="icon" aria-hidden="true"><use href="#i-app"/></svg></span><div class="app-offer-copy"><span class="offer-kicker">Continue sua preparação</span><h2 id="purchaseTitle">Aplicativo de questões PMPE</h2><p>Treine além do aulão com o aplicativo de questões do Prof. Thiago Oliveira.</p></div></div><a id="introPurchaseLink" class="purchase-button" href="https://thiagoceoliveira-collab.github.io/APLICATIVOPMPE/" target="_blank" rel="noopener noreferrer">Adquirir aplicativo de questões<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></aside>
+    <aside class="app-offer" aria-labelledby="purchaseTitle"><div class="app-offer-content"><span class="offer-icon"><svg class="icon" aria-hidden="true"><use href="#i-app"/></svg></span><div class="app-offer-copy"><span class="offer-kicker">Continue sua preparação</span><h2 id="purchaseTitle">Aplicativo de questões PMPE</h2><p>Treine além do aulão com o aplicativo de questões do Prof. Thiago Oliveira.</p></div></div><a id="introPurchaseLink" class="purchase-button" href="?teste-gratis=1" target="_blank" rel="noopener noreferrer">QUERO TESTAR O APP GRÁTIS<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></aside>
     <div class="dashboard-layout">
       <section class="topic-panel" aria-labelledby="topicsTitle"><div class="section-heading"><h2 id="topicsTitle">Seu roteiro de estudo</h2><span>5 questões do aulão</span></div><div id="topicGrid" class="topic-grid" aria-label="Temas e acesso às questões"></div></section>
       <aside class="mission-card" aria-labelledby="missionTitle"><div class="mission-title"><h2 id="missionTitle">Sua missão de hoje</h2><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg></div><p id="dashboardStatus">Comece pela primeira questão.</p><div class="mission-count"><strong id="dashboardMarked">0</strong><span>/ 5</span></div><div class="mission-caption">questões com alternativa marcada</div><progress id="dashboardProgress" max="5" value="0" aria-label="Questões marcadas neste caderno"></progress><div class="mission-totals"><div><b id="dashboardPending">5</b><span>em aberto</span></div><div><b id="dashboardReview">0</b><span>para revisar</span></div></div><button id="openReviewBtn" class="secondary" type="button">Ver minhas marcações <span aria-hidden="true">↗</span></button><p id="storageNote" class="storage-note">Seu progresso fica salvo neste navegador para continuar de onde parou.</p></aside>
@@ -175,18 +201,59 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #79
     <div class="finish-stats"><div><strong id="finalMarked">0</strong><span>questões marcadas</span></div><div><strong id="finalPending">5</strong><span>sem marcação</span></div><div><strong id="finalReview">0</strong><span>para revisar</span></div></div>
     <h2 class="summary-heading">Suas alternativas</h2><div id="reviewGrid" class="summary-grid"></div>
     <aside class="video-callout" aria-labelledby="videoTitle"><div class="video-label">Continue com o professor</div><h2 id="videoTitle">Gabarito comentado no YouTube</h2><p>Acompanhe a explicação de cada questão e o gabarito comentado no aulão do Prof. Thiago Oliveira. Compare suas marcações com a resolução e revise os conceitos e os quadros de apoio junto com o professor.</p><a id="youtubeLink" class="primary" target="_blank" rel="noopener noreferrer" hidden>Assistir à aula comentada <span aria-hidden="true">↗</span></a><button id="youtubePending" class="primary" type="button" disabled>Link da aula em breve</button><p id="youtubeNote" class="soon-note">O link será adicionado pelo professor.</p></aside>
-    <aside class="app-offer app-offer--result" aria-labelledby="resultPurchaseTitle"><div class="app-offer-content"><span class="offer-icon"><svg class="icon" aria-hidden="true"><use href="#i-app"/></svg></span><div class="app-offer-copy"><span class="offer-kicker">Seu próximo passo</span><h2 id="resultPurchaseTitle">Continue treinando para a PMPE</h2><p>Adquira o aplicativo de questões e leve o treino para sua rotina de estudos.</p></div></div><a id="resultPurchaseLink" class="purchase-button" href="https://thiagoceoliveira-collab.github.io/APLICATIVOPMPE/" target="_blank" rel="noopener noreferrer">Adquirir aplicativo de questões<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></aside>
+    <aside class="app-offer app-offer--result" aria-labelledby="resultPurchaseTitle"><div class="app-offer-content"><span class="offer-icon"><svg class="icon" aria-hidden="true"><use href="#i-app"/></svg></span><div class="app-offer-copy"><span class="offer-kicker">Seu próximo passo</span><h2 id="resultPurchaseTitle">Continue treinando para a PMPE</h2><p>Adquira o aplicativo de questões e leve o treino para sua rotina de estudos.</p></div></div><a id="resultPurchaseLink" class="purchase-button" href="?teste-gratis=1" target="_blank" rel="noopener noreferrer">QUERO TESTAR O APP GRÁTIS<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></aside>
     <div class="finish-actions"><button id="reviewAllBtn" type="button" class="secondary">← Rever minhas marcações</button><button id="resetBtn" type="button" class="secondary">Reiniciar treino</button></div>
     <p class="finish-note">Esta página registra suas escolhas. O gabarito e os comentários são apresentados na aula.</p>
   </section>
 </main>
 <footer class="page-foot"><div class="wrap"><span>TROPA DA APROVAÇÃO · PROF. THIAGO OLIVEIRA</span><span>Material de estudo independente · PMPE · <a href="https://www.instagram.com/proftholiveira/" target="_blank" rel="noopener noreferrer">Conheça o professor ↗</a></span></div></footer>
+<section id="trialScreen" aria-labelledby="trialTitle">
+ <div class="trial-layout">
+  <div class="trial-topline"><span class="trial-crest"><img id="trialCrest" alt="Brasão PMPE" loading="lazy"></span><span>CURSO PROFESSOR THIAGO OLIVEIRA<br><small>QUESTÕES PMPE · SOLDADO QPMG</small></span></div>
+  <div class="trial-card">
+   <span class="trial-kicker">Convite gratuito · Solicitação por WhatsApp</span>
+   <h1 id="trialTitle">Teste o aplicativo de questões PMPE gratuitamente.</h1>
+   <p>Informe apenas seu <strong>primeiro nome</strong> e o <strong>e-mail que deseja usar no aplicativo</strong>. Ao continuar, abriremos seu WhatsApp com uma mensagem pronta para solicitar o convite.</p>
+   <form id="trialForm" class="trial-form">
+    <label for="trialFirstName">Seu primeiro nome
+     <input id="trialFirstName" name="primeiro_nome" type="text" autocomplete="given-name" placeholder="Ex.: Ana" maxlength="45" required>
+    </label>
+    <label for="trialEmail">Seu e-mail de acesso
+     <input id="trialEmail" name="email" type="email" autocomplete="email" placeholder="voce@email.com" maxlength="120" required>
+    </label>
+    <button class="trial-send" type="submit">SOLICITAR MEU TESTE GRATUITO NO WHATSAPP →</button>
+   </form>
+   <p class="trial-privacy">Seus dados serão incluídos na mensagem do WhatsApp e não serão armazenados nesta página. Confirme o envio dentro do WhatsApp para que o professor receba seu pedido. O acesso é liberado por convite.</p>
+  </div>
+  <div class="trial-foot">Tropa da Aprovação · @proftholiveira<br>Treino direcionado ao concurso de Soldado da Polícia Militar de Pernambuco.</div>
+ </div>
+</section>
+
 <nav class="mobile-nav" aria-label="Navegação do material"><button id="mobileHome" type="button" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg>Início</button><button id="mobileTrain" type="button" aria-current="false"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>Treino</button><button id="mobileReview" type="button" aria-current="false"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg>Marcações</button></nav>
 <dialog id="resetDialog" aria-labelledby="resetTitle"><h2 id="resetTitle">Começar um novo treino?</h2><p>As cinco marcações e os lembretes de revisão deste caderno serão apagados neste navegador.</p><div class="dialog-actions"><button id="cancelReset" class="secondary" type="button">Manter marcações</button><button id="confirmReset" class="primary" type="button">Reiniciar</button></div></dialog>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 <script>
 
 'use strict';
+/* Rota do teste gratuito - mesma experiência da página ECA. */
+const isTrialScreen = new URLSearchParams(window.location.search).has('teste-gratis');
+if (isTrialScreen) {
+ document.body.classList.add('trial-mode');
+ document.title='Teste grátis · Questões PMPE | Prof. Thiago Oliveira';
+ const crest=document.querySelector('.crest-box img');
+ if(crest)document.querySelector('#trialCrest').src=crest.src;
+ document.querySelector('#trialForm').addEventListener('submit',function(event){
+  event.preventDefault();
+  if(!this.reportValidity())return;
+  const nome=document.querySelector('#trialFirstName').value.trim().split(/\s+/)[0];
+  const email=document.querySelector('#trialEmail').value.trim();
+  if(!nome || !email)return;
+  const mensagem='Olá, Professor Thiago Oliveira! Quero testar o aplicativo de questões PM Pernambuco gratuitamente.\n\nPrimeiro nome: '+nome+'\nE-mail para receber o convite: '+email+'\n\nGostaria de receber um convite gratuito para testar o aplicativo PMPE.';
+  window.location.assign('https://wa.me/5585998594643?text='+encodeURIComponent(mensagem));
+ });
+}
+
+
 /* CONFIGURAÇÃO DO PROFESSOR: link do aulão que acompanha este material.
    Aceita https://www.youtube.com/watch?v=... ou https://youtu.be/...
    Exemplo: const VIDEO_AULA_URL = "https://www.youtube.com/watch?v=IDENTIFICADOR";
